@@ -20,6 +20,22 @@ padding: 0 8px;
 padding-right: 16px;
 
 }
+
+.pengunjung-container {
+    display: flex;
+    align-items: center; /* Menyelaraskan teks dan gambar secara vertikal */
+}
+
+.pengunjung-container h3 {
+    margin-right: 15px; /* Jarak antara teks dan gambar */
+    font-size: 24px; /* Ukuran font yang proporsional */
+}
+
+.visitor-counter {
+    width: 150px; /* Sesuaikan lebar visitor counter */
+    height: auto; /* Mempertahankan rasio gambar */
+}
+
 .container-padding {
 box-shadow: 0 0 25px;
 width: 70%;
