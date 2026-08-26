@@ -211,6 +211,30 @@ function escapeHtml(text) {
     return text.replace(/[&<>"']/g, function(m) { return map[m]; });
 }
 
+// Real-Time Clock Function
+function updateRealtimeClock() {
+    const now = new Date();
+    const options = { 
+        weekday: 'short', 
+        year: 'numeric', 
+        month: 'short', 
+        day: 'numeric', 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        second: '2-digit',
+        hour12: false 
+    };
+    // Menggunakan format Indonesia
+    const timeString = now.toLocaleDateString('id-ID', options);
+    const clockEl = document.getElementById('realtime-clock');
+    if (clockEl) {
+        clockEl.innerText = timeString;
+    }
+}
+
+// Jalankan fungsi jam setiap 1 detik (1000 ms)
+setInterval(updateRealtimeClock, 1000);
+
 // Jalankan semua fungsi saat halaman selesai dimuat dengan aman
 window.addEventListener('DOMContentLoaded', () => {
     setTimeout(typeWriter, 600);
