@@ -656,20 +656,20 @@ a:hover {
 .bottom-right { bottom: -2px; right: -2px; border-left: none; border-top: none; }
 
 /* ========================================= */
-/* OPTIMIZED PRINT & PDF STYLING (FIXED)     */
+/* PREMIUM CORPORATE RESUME TEMPLATE (PRINT) */
 /* ========================================= */
 @media print {
     @page {
         size: A4;
-        margin: 1cm;
+        margin: 1.2cm 1.5cm;
     }
 
     body {
         background: #ffffff !important;
-        color: #111111 !important;
-        font-family: 'Inter', sans-serif !important;
-        font-size: 10.5pt;
-        line-height: 1.35;
+        color: #1a1a1a !important;
+        font-family: 'Inter', Arial, sans-serif !important;
+        font-size: 10pt;
+        line-height: 1.45;
     }
 
     .container {
@@ -680,15 +680,54 @@ a:hover {
         background: #ffffff !important;
         border: none !important;
         box-shadow: none !important;
-        backdrop-filter: none !important;
     }
 
-    /* Sembunyikan elemen web yang tidak perlu dicetak */
-    body::before, .corner-deco, .cyber-button, .cyber-form, .visitor-widget, .terminal-box {
+    body::before, 
+    .corner-deco, 
+    .cyber-button, 
+    .cyber-form, 
+    .visitor-widget, 
+    .terminal-box, 
+    .avatar-status {
         display: none !important;
     }
 
-    /* Ubah grid sidebar menjadi blok lurus ke bawah */
+    header {
+        background: #f4f6f8 !important;
+        border-top: 4px solid #004080 !important;
+        border-bottom: 1px solid #dcdcdc !important;
+        padding: 20px !important;
+        margin-bottom: 20px !important;
+        text-align: left !important;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header::after {
+        display: none !important;
+    }
+
+    .mini-logo {
+        display: none !important;
+    }
+
+    header h1 {
+        font-size: 22pt !important;
+        color: #002b49 !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.5px !important;
+        margin: 0 0 4px 0 !important;
+        text-shadow: none !important;
+    }
+
+    .subtitle-container {
+        font-size: 11pt !important;
+        color: #004080 !important;
+        font-weight: 600 !important;
+    }
+
     .main-content {
         display: block !important;
     }
@@ -701,54 +740,143 @@ a:hover {
         box-shadow: none !important;
     }
 
-    h1, h2, .timeline-title {
-        color: #000000 !important;
-        text-shadow: none !important;
+    .sidebar .section {
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        margin-bottom: 15px;
     }
 
-    h2 {
-        border-bottom: 2px solid #333;
-        padding-bottom: 3px;
-        margin-top: 15px;
-        font-size: 12pt;
-    }
-
-    p, li, .timeline-desc, .testimonial-text {
-        color: #333333 !important;
-    }
-
-    .contact-list li span {
-        color: #555 !important;
+    .avatar-container {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        margin: 0 !important;
     }
 
     .avatar-box {
-        width: 90px !important;
-        height: 90px !important;
-        border: 2px solid #333 !important;
-        box-shadow: none !important;
-        margin-bottom: 6px !important;
+        width: 85px !important;
+        height: 85px !important;
+        border: 2px solid #004080 !important;
+        border-radius: 6px !important;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
     }
 
-    .avatar-status {
-        border: 1px solid #333 !important;
-        color: #333 !important;
-        background: transparent !important;
+    .contact-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px 25px;
+        font-size: 9pt;
+        background: #fafafa;
+        border: 1px solid #e5e5e5;
+        padding: 10px 15px;
+        border-radius: 4px;
+        margin-bottom: 20px;
     }
 
-    header {
-        border-bottom: 2px solid #000 !important;
-        margin-bottom: 15px !important;
-        padding-bottom: 10px !important;
+    .contact-list li {
+        margin-bottom: 0 !important;
     }
 
-    header::after {
+    .contact-list li span {
+        color: #004080 !important;
+        font-weight: bold;
+    }
+
+    h2 {
+        font-size: 11pt !important;
+        color: #002b49 !important;
+        background: #f0f4f8 !important;
+        border-left: 4px solid #004080 !important;
+        border-bottom: 1px solid #dcdcdc !important;
+        border-top: 1px solid #dcdcdc !important;
+        padding: 5px 10px !important;
+        margin-top: 18px !important;
+        margin-bottom: 10px !important;
+        text-shadow: none !important;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    h2::before {
+        content: '' !important;
+    }
+
+    p, .profile-text, .timeline-desc, li {
+        color: #333333 !important;
+        font-size: 9.5pt !important;
+        text-align: justify !important;
+    }
+
+    .profile-text {
+        border-left: none !important;
+        padding-left: 0 !important;
+        margin-bottom: 12px !important;
+    }
+
+    .timeline-item {
+        padding-left: 10px !important;
+        border-left: 2px solid #b0c4de !important;
+        margin-bottom: 12px !important;
+    }
+
+    .timeline-item::before {
         display: none !important;
     }
 
-    .mini-logo {
-        border: 2px solid #000 !important;
+    .timeline-title {
+        font-size: 10pt !important;
+        color: #111 !important;
+        font-weight: bold;
+    }
+
+    .timeline-subtitle {
+        color: #555 !important;
+        font-size: 9pt !important;
+        margin-bottom: 4px !important;
+    }
+
+    .timeline-subtitle a {
+        background: none !important;
+        border: none !important;
+        color: #004080 !important;
+        padding: 0 !important;
+    }
+
+    .skill-item {
+        margin-bottom: 6px !important;
+    }
+
+    .skill-bar-bg {
+        height: 5px !important;
+        border: none !important;
+        background: #e0e0e0 !important;
+        border-radius: 2px;
+    }
+
+    .skill-bar-fill {
+        background: #004080 !important;
         box-shadow: none !important;
-        background: transparent !important;
+        border-radius: 2px;
+    }
+
+    .testimonial-box {
+        background: #f9f9f9 !important;
+        border-left: 3px solid #004080 !important;
+        padding: 8px 12px !important;
+        margin-bottom: 8px !important;
+        border-radius: 0 4px 4px 0;
+    }
+
+    .testimonial-box::before {
+        display: none !important;
+    }
+
+    .star-rating {
+        color: #d4af37 !important;
+        text-shadow: none !important;
+        font-size: 9pt !important;
     }
 
     .timeline-item, .testimonial-box, .section {
