@@ -140,6 +140,77 @@ if (reviewForm) {
     });
 }
 
+// Terminal Interactive Logic
+const terminalInput = document.getElementById('terminal-input');
+const terminalOutput = document.getElementById('terminal-output');
+
+if (terminalInput) {
+    terminalInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            const command = terminalInput.value.trim().toLowerCase();
+            
+            // Tampilkan input user ke terminal
+            const userLine = document.createElement('p');
+            userLine.innerHTML = `<span style="color: var(--neon-cyan);">guest@gabriels:~$</span> ${escapeHtml(terminalInput.value)}`;
+            terminalOutput.appendChild(userLine);
+
+            // Proses perintah
+            const responseLine = document.createElement('p');
+            responseLine.style.color = '#a9bada';
+
+            switch(command) {
+                case 'help':
+                    responseLine.innerHTML = `Perintah yang tersedia:<br>
+                    - <span class="cmd-highlight">about</span> : Ringkasan profil singkat<br>
+                    - <span class="cmd-highlight">skills</span> : Daftar keahlian utama<br>
+                    - <span class="cmd-highlight">projects</span> : Daftar proyek unggulan<br>
+                    - <span class="cmd-highlight">contact</span> : Informasi kontak & WhatsApp<br>
+                    - <span class="cmd-highlight">clear</span> : Bersihkan layar terminal`;
+                    break;
+                case 'about':
+                    responseLine.innerText = "Software Engineer spesialis Web, Android, & Desktop asal Raas City.";
+                    break;
+                case 'skills':
+                    responseLine.innerText = "JavaScript, React, Node.js, Kotlin, Flutter, C#, MySQL, Firebase, Apps Script.";
+                    break;
+                case 'projects':
+                    responseLine.innerText = "1. Sistem Kasir POS & Loyalty\n2. Financial Monitoring Dashboard (ID STORE)";
+                    break;
+                case 'contact':
+                    responseLine.innerHTML = "Email: ardiansyahfiqih47@gmail.com<br>WA: 085963090921";
+                    break;
+                case 'clear':
+                    terminalOutput.innerHTML = '<p>Terminal dibersihkan. Ketik <span class="cmd-highlight">\'help\'</span> untuk bantuan.</p>';
+                    terminalInput.value = '';
+                    return;
+                case '':
+                    responseLine.innerText = '';
+                    break;
+                default:
+                    responseLine.innerHTML = `Perintah tidak dikenal: "${escapeHtml(command)}". Ketik <span class="cmd-highlight">'help'</span> untuk daftar perintah.`;
+            }
+
+            terminalOutput.appendChild(responseLine);
+            terminalInput.value = '';
+            
+            // Scroll ke bawah otomatis
+            terminalOutput.scrollTop = terminalOutput.scrollHeight;
+        }
+    });
+}
+
+// Helper untuk mencegah XSS pada input terminal
+function escapeHtml(text) {
+    const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+    };
+    return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+}
+
 // Jalankan semua fungsi saat halaman selesai dimuat dengan aman
 window.addEventListener('DOMContentLoaded', () => {
     setTimeout(typeWriter, 600);
