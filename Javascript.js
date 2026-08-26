@@ -1,5 +1,23 @@
 const scriptUrl = 'https://script.google.com/macros/s/AKfycbxpWN4v8RrUutO3brnbGv4oPlVUPQRneGRw1ozxsUNfXbTMWxBYYVqWLgS9fEUi6xtXbA/exec';
 
+// Fungsi Quick Copy Teks Kontak
+function copyText(text, label) {
+    navigator.clipboard.writeText(text).then(() => {
+        Swal.fire({
+            title: 'BERHASIL DISALIN',
+            text: `${label} (${text}) telah disalin ke clipboard!`,
+            icon: 'success',
+            timer: 2000,
+            showConfirmButton: false,
+            customClass: {
+                popup: 'cyber-swal'
+            }
+        });
+    }).catch(err => {
+        console.error('Gagal menyalin: ', err);
+    });
+}
+
 // 1. Cyberpunk Typewriter Effect for the Subtitle
 const textToType = "Web | Android | Desktop Developer";
 const typeElement = document.getElementById('typed-text');
@@ -107,7 +125,6 @@ if (reviewForm) {
             });
             reviewForm.reset();
             
-            // Refresh ulasan setelah beberapa detik agar masuk ke spreadsheet & tampil
             setTimeout(loadLiveReviews, 2000);
         }).catch(error => {
             console.error('Error!', error);
