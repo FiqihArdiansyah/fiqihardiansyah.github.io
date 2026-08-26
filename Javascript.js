@@ -241,4 +241,5 @@ window.addEventListener('DOMContentLoaded', () => {
     setTimeout(animateSkillBars, 400);
     updateVisitorCount();
     loadLiveReviews();
+    updateRealtimeClock();
 });
