@@ -396,6 +396,86 @@ a:hover {
     text-shadow: 0 0 8px var(--neon-cyan);
 }
 
+/* Terminal Interactive Styles */
+.terminal-box {
+    background: #020408;
+    border: 1px solid var(--neon-cyan);
+    border-radius: 6px;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
+    font-family: 'Share Tech Mono', monospace;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.terminal-header {
+    background: #0d1424;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot.red { background: #ff5f56; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green { background: #27c93f; }
+
+.terminal-title {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-left: 5px;
+}
+
+.terminal-body {
+    padding: 15px;
+    max-height: 200px;
+    overflow-y: auto;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.terminal-body p {
+    margin: 0;
+}
+
+.cmd-highlight {
+    color: var(--neon-yellow);
+}
+
+.terminal-input-line {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 240, 255, 0.05);
+    padding: 10px 15px;
+    border-top: 1px solid var(--border-color);
+    gap: 10px;
+}
+
+.prompt {
+    color: var(--neon-cyan);
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+#terminal-input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.9rem;
+    width: 100%;
+    outline: none;
+}
+
 .testimonial-box {
     background: rgba(157, 0, 255, 0.05);
     border-left: 3px solid var(--neon-purple);
@@ -575,92 +655,106 @@ a:hover {
 .bottom-left { bottom: -2px; left: -2px; border-right: none; border-top: none; }
 .bottom-right { bottom: -2px; right: -2px; border-left: none; border-top: none; }
 
-
-/* Terminal Interactive Styles */
-.terminal-box {
-    background: #020408;
-    border: 1px solid var(--neon-cyan);
-    border-radius: 6px;
-    box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
-    font-family: 'Share Tech Mono', monospace;
-    overflow: hidden;
-    margin-top: 20px;
-}
-
-.terminal-header {
-    background: #0d1424;
-    padding: 8px 12px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    display: inline-block;
-}
-.dot.red { background: #ff5f56; }
-.dot.yellow { background: #ffbd2e; }
-.dot.green { background: #27c93f; }
-
-.terminal-title {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    margin-left: 5px;
-}
-
-.terminal-body {
-    padding: 15px;
-    max-height: 200px;
-    overflow-y: auto;
-    font-size: 0.9rem;
-    color: var(--text-main);
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.terminal-body p {
-    margin: 0;
-}
-
-.cmd-highlight {
-    color: var(--neon-yellow);
-}
-
-.terminal-input-line {
-    display: flex;
-    align-items: center;
-    background: rgba(0, 240, 255, 0.05);
-    padding: 10px 15px;
-    border-top: 1px solid var(--border-color);
-    gap: 10px;
-}
-
-.prompt {
-    color: var(--neon-cyan);
-    font-size: 0.9rem;
-    white-space: nowrap;
-}
-
-#terminal-input {
-    background: transparent;
-    border: none;
-    color: #fff;
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 0.9rem;
-    width: 100%;
-    outline: none;
-}
-
-/* Print styling optimization */
+/* ========================================= */
+/* OPTIMIZED PRINT & PDF STYLING (FIXED)     */
+/* ========================================= */
 @media print {
-    body { background: #fff !important; color: #000 !important; }
-    .container { border: none; box-shadow: none; width: 100%; margin: 0; padding: 10px; }
-    .cyber-button, .cyber-form, .visitor-widget, .corner-deco { display: none !important; }
+    @page {
+        size: A4;
+        margin: 1cm;
+    }
+
+    body {
+        background: #ffffff !important;
+        color: #111111 !important;
+        font-family: 'Inter', sans-serif !important;
+        font-size: 10.5pt;
+        line-height: 1.35;
+    }
+
+    .container {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #ffffff !important;
+        border: none !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+    }
+
+    /* Sembunyikan elemen web yang tidak perlu dicetak */
+    body::before, .corner-deco, .cyber-button, .cyber-form, .visitor-widget, .terminal-box {
+        display: none !important;
+    }
+
+    /* Ubah grid sidebar menjadi blok lurus ke bawah */
+    .main-content {
+        display: block !important;
+    }
+
+    .sidebar, .details {
+        width: 100% !important;
+        padding: 0 !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    h1, h2, .timeline-title {
+        color: #000000 !important;
+        text-shadow: none !important;
+    }
+
+    h2 {
+        border-bottom: 2px solid #333;
+        padding-bottom: 3px;
+        margin-top: 15px;
+        font-size: 12pt;
+    }
+
+    p, li, .timeline-desc, .testimonial-text {
+        color: #333333 !important;
+    }
+
+    .contact-list li span {
+        color: #555 !important;
+    }
+
+    .avatar-box {
+        width: 90px !important;
+        height: 90px !important;
+        border: 2px solid #333 !important;
+        box-shadow: none !important;
+        margin-bottom: 6px !important;
+    }
+
+    .avatar-status {
+        border: 1px solid #333 !important;
+        color: #333 !important;
+        background: transparent !important;
+    }
+
+    header {
+        border-bottom: 2px solid #000 !important;
+        margin-bottom: 15px !important;
+        padding-bottom: 10px !important;
+    }
+
+    header::after {
+        display: none !important;
+    }
+
+    .mini-logo {
+        border: 2px solid #000 !important;
+        box-shadow: none !important;
+        background: transparent !important;
+    }
+
+    .timeline-item, .testimonial-box, .section {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
 }
 
 @media screen and (max-width: 900px) {
