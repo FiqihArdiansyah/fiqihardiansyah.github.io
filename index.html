@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Gabriels - Raas City</title>
     
-    <!-- Favicon Kustom Cyberpunk yang Disempurnakan -->
+    <!-- Favicon Kustom Cyberpunk -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><polygon points=%2250,5 93,27 93,73 50,95 7,73 7,27%22 stroke=%22%2300f0ff%22 stroke-width=%228%22 fill=%22%230d1424%22/><text x=%2250%22 y=%2254%22 text-anchor=%22middle%22 dominant-baseline=%22central%22 font-size=%2260%22 fill=%22%2300f0ff%22 font-family=%22Arial, sans-serif%22 font-weight=%22bold%22>G</text></svg>">
 
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Inter:wght@300;400;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
@@ -43,7 +43,6 @@
                 <!-- Avatar / Photo Section -->
                 <div class="section avatar-container">
                     <div class="avatar-box">
-                        <!-- Pastikan file 1776761474268.png / foto.jpg ada di folder yang sama -->
                         <img src="1776761474268.png" alt="Gabriels Photo" onerror="this.src='https://via.placeholder.com/130x130/0b0c10/00f0ff?text=GABRIELS'">
                     </div>
                     <div class="avatar-status">STATUS: ONLINE</div>
@@ -53,11 +52,14 @@
                     <h2>SYSTEM.INFO</h2>
                     <ul class="contact-list">
                         <li><span>[LOC]</span> Raas City, ID</li>
-                        <li><span>[MAIL]</span> <a href="mailto:ardiansyahfiqih47@gmail.com">ardiansyahfiqih47@gmail.com</a></li>
+                        <li><span>[MAIL]</span> <a href="#" onclick="copyText('ardiansyahfiqih47@gmail.com', 'Email'); return false;" title="Klik untuk salin email">ardiansyahfiqih47@gmail.com 📋</a></li>
                         <li><span>[WA]</span> <a href="https://wa.me/6285963090921?text=Halo%20Gabriels%2C%20saya%20ingin%20request%20aplikasi%20lain.%20Saya%20ingin%20dibuatkan%20aplikasi%20baru%20sesuai%20kebutuhan%20saya.%20Mohon%20informasi%20mengenai%20proses%2C%20fitur%2C%20dan%20harganya.%20Terima%20kasih." target="_blank">085963090921</a></li>
                         <li><span>[WEB]</span> <a href="#">gabriels.dev</a></li>
                         <li><span>[GIT]</span> <a href="#">github.com/gabriels</a></li>
                     </ul>
+
+                    <!-- Tombol Cetak / PDF -->
+                    <button class="cyber-button print-btn" onclick="window.print()">[ 🖨️ CETAK / PDF ]</button>
 
                     <!-- Visitor Counter Widget -->
                     <div class="visitor-widget">
@@ -70,8 +72,6 @@
 
                 <div class="section">
                     <h2>SKILLS.EXE</h2>
-                    
-                    <!-- Skill Bar with Percentage -->
                     <div class="skill-item">
                         <div class="skill-info"><span>JavaScript / Node.js</span><span>90%</span></div>
                         <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="90%"></div></div>
@@ -108,7 +108,6 @@
                         <div class="skill-info"><span>Python & Apps Script</span><span>82%</span></div>
                         <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="82%"></div></div>
                     </div>
-
                 </div>
                 
                 <div class="section">
@@ -146,7 +145,6 @@
 
                 <div class="section">
                     <h2>// PROJECTS_DIR</h2>
-                    
                     <div class="timeline-item">
                         <div class="timeline-title">Sistem Kasir POS & Loyalty System</div>
                         <div class="timeline-subtitle">
@@ -183,7 +181,6 @@
                 <div class="section" id="reviews-section">
                     <h2>// CLIENT_REVIEWS</h2>
                     
-                    <!-- Dummy Reviews with Stars -->
                     <div class="testimonial-box">
                         <div class="star-rating">★★★★★</div>
                         <div class="testimonial-text">"Sistem kasir yang jauh sangat membantu operasional toko. Fitur poin dan referral-nya berjalan mulus dan bikin pelanggan balik lagi!"</div>
@@ -195,10 +192,8 @@
                         <div class="testimonial-author">- Admin, ID STORE</div>
                     </div>
 
-                    <!-- Container for live reviews fetched from Google Sheets -->
                     <div id="dynamic-reviews-container"></div>
 
-                    <!-- Review / Contact Form -->
                     <form id="review-form" class="cyber-form">
                         <p>> TINGGALKAN ULASAN / HUBUNGI SAYA:</p>
                         
@@ -220,7 +215,6 @@
                         <button type="submit" class="cyber-button">KIRIM TRANSMISI >_</button>
                     </form>
                 </div>
-
             </section>
         </div>
     </div>
