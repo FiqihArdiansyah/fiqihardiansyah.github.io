@@ -85,13 +85,9 @@ header::after {
     background: linear-gradient(135deg, rgba(157, 0, 255, 0.2), rgba(0, 240, 255, 0.2));
     border: 2px solid var(--neon-cyan);
     color: #fff;
-    font-family: 'Chakra Petch', sans-serif;
-    font-weight: bold;
-    font-size: 1.8rem;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
     margin-bottom: 15px;
-    text-shadow: 0 0 10px var(--neon-cyan);
 }
 
 h1 {
@@ -112,7 +108,6 @@ h1 {
     min-height: 30px;
 }
 
-/* LAPTOP / DESKTOP LAYOUT (Default) */
 .main-content {
     display: grid;
     grid-template-columns: 280px 1fr;
@@ -150,7 +145,6 @@ h2::before {
     box-shadow: inset 20px 0 20px -20px rgba(0, 240, 255, 0.1);
 }
 
-/* Profile Photo Avatar */
 .avatar-container {
     text-align: center;
     margin-bottom: 25px;
@@ -172,7 +166,7 @@ h2::before {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 20%; 
+    object-position: center 20%;
 }
 
 .avatar-status {
@@ -206,7 +200,14 @@ h2::before {
     min-width: 50px;
 }
 
-/* Visitor Counter Widget */
+.print-btn {
+    width: 100%;
+    margin-top: 15px;
+    font-size: 0.85rem;
+    padding: 10px;
+    text-align: center;
+}
+
 .visitor-widget {
     margin-top: 20px;
     padding-top: 15px;
@@ -257,7 +258,6 @@ h2::before {
     50% { opacity: 0; }
 }
 
-/* Skill Bar Percentage Styles */
 .skill-item {
     margin-bottom: 15px;
 }
@@ -396,7 +396,6 @@ a:hover {
     text-shadow: 0 0 8px var(--neon-cyan);
 }
 
-/* --- TESTIMONIAL & FORM STYLES --- */
 .testimonial-box {
     background: rgba(157, 0, 255, 0.05);
     border-left: 3px solid var(--neon-purple);
@@ -473,7 +472,6 @@ a:hover {
     box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
 }
 
-/* Star rating input picker */
 .rating-select-container {
     display: flex;
     gap: 10px;
@@ -530,7 +528,6 @@ a:hover {
     box-shadow: 0 0 15px var(--neon-purple);
 }
 
-/* Cyberpunk SweetAlert Custom Styling */
 .swal2-popup.cyber-swal {
     background: #0d1424 !important;
     border: 1px solid rgba(0, 240, 255, 0.4) !important;
@@ -567,7 +564,6 @@ a:hover {
     box-shadow: 0 0 20px #9d00ff !important;
 }
 
-/* UI decoration elements */
 .corner-deco {
     position: absolute;
     width: 30px;
@@ -579,10 +575,13 @@ a:hover {
 .bottom-left { bottom: -2px; left: -2px; border-right: none; border-top: none; }
 .bottom-right { bottom: -2px; right: -2px; border-left: none; border-top: none; }
 
+/* Print styling optimization */
+@media print {
+    body { background: #fff !important; color: #000 !important; }
+    .container { border: none; box-shadow: none; width: 100%; margin: 0; padding: 10px; }
+    .cyber-button, .cyber-form, .visitor-widget, .corner-deco { display: none !important; }
+}
 
-/* ========================================= */
-/* RESPONSIVE MEDIA QUERIES                  */
-/* ========================================= */
 @media screen and (max-width: 900px) {
     .container { width: 95%; margin: 30px auto; padding: 30px; }
     .main-content { grid-template-columns: 1fr; gap: 30px; }
