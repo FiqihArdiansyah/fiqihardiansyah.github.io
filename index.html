@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Gabriels - Raas City</title>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Inter:wght@300;400;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Decorative corners (hidden on mobile) -->
+        <div class="corner-deco top-left"></div>
+        <div class="corner-deco top-right"></div>
+        <div class="corner-deco bottom-left"></div>
+        <div class="corner-deco bottom-right"></div>
+
+        <header>
+            <!-- Thumbnail Logo Badge -->
+            <div class="mini-logo">G</div>
+            <h1>GABRIELS</h1>
+            <div class="subtitle-container">
+                <span id="typed-text"></span><span class="cursor"></span>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <!-- Avatar / Photo Section -->
+                <div class="section avatar-container">
+                    <div class="avatar-box">
+                        <!-- Letakkan file foto.jpg di folder yang sama dengan file-file ini -->
+                        <img src="foto.jpg" alt="Gabriels Photo" onerror="this.src='https://via.placeholder.com/130x130/0b0c10/00f0ff?text=GABRIELS'">
+                    </div>
+                    <div class="avatar-status">STATUS: ONLINE</div>
+                </div>
+
+                <div class="section">
+                    <h2>SYSTEM.INFO</h2>
+                    <ul class="contact-list">
+                        <li><span>[LOC]</span> Raas City, ID</li>
+                        <li><span>[MAIL]</span> <a href="mailto:ardiansyahfiqih47@gmail.com">ardiansyahfiqih47@gmail.com</a></li>
+                        <li><span>[WA]</span> <a href="https://wa.me/6285963090921" target="_blank">085963090921</a></li>
+                        <li><span>[WEB]</span> <a href="#">gabriels.dev</a></li>
+                        <li><span>[GIT]</span> <a href="#">github.com/gabriels</a></li>
+                    </ul>
+
+                    <!-- Visitor Counter Widget -->
+                    <div class="visitor-widget">
+                        <div class="visitor-title">> TOTAL TRAFFIC / VIEWS</div>
+                        <div class="visitor-display">
+                            <span>👁️</span> <span id="visitor-count">1,337</span> <small style="color:var(--text-muted); font-size:0.75rem;">VIEWS</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>SKILLS.EXE</h2>
+                    
+                    <!-- Skill Bar with Percentage -->
+                    <div class="skill-item">
+                        <div class="skill-info"><span>JavaScript / Node.js</span><span>90%</span></div>
+                        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="90%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>HTML5 & CSS3</span><span>95%</span></div>
+                        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="95%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>React.js (Web)</span><span>88%</span></div>
+                        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="88%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Kotlin / Flutter (Android)</span><span>85%</span></div>
+                        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="85%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>C# / .NET (Desktop)</span><span>80%</span></div>
+                        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="80%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>MySQL & PostgreSQL</span><span>90%</span></div>
+                        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="90%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>MongoDB & NoSQL</span><span>85%</span></div>
+                        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="85%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Firebase & SQLite</span><span>88%</span></div>
+                        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="88%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Python & Apps Script</span><span>82%</span></div>
+                        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="82%"></div></div>
+                    </div>
+
+                </div>
+                
+                <div class="section">
+                    <h2>EDUCATION.DAT</h2>
+                    <div class="timeline-item">
+                        <div class="timeline-title">S.Kom - Informatika (Fakultas Teknik)</div>
+                        <div class="timeline-subtitle">Universitas Wiraraja Madura | 2020 - 2024</div>
+                        <div class="timeline-desc">Fokus pada rekayasa perangkat lunak dan arsitektur sistem.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-title small">SMK Al-Ittihad Raas</div>
+                        <div class="timeline-subtitle">2017 - 2020</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-title small">SMP Nurul Hudah Banyupitih</div>
+                        <div class="timeline-subtitle">2014 - 2017</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-title small">MI Almunawwirah</div>
+                        <div class="timeline-subtitle">2008 - 2014</div>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="details">
+                <div class="section">
+                    <h2>// ABOUT_ME</h2>
+                    <p class="profile-text">
+                        Software Engineer dengan keahlian mendalam dalam pengembangan aplikasi lintas platform serta manajemen basis data. 
+                        Memiliki pengalaman membangun solusi teknologi yang efisien untuk ekosistem Web, Android, dan Desktop. 
+                        Berorientasi pada penulisan kode yang bersih (clean code), pemecahan masalah yang analitis, 
+                        serta perancangan arsitektur database dan logika bisnis yang kompleks seperti manajemen loyalty dan keuangan.
+                    </p>
+                </div>
+
+                <div class="section">
+                    <h2>// PROJECTS_DIR</h2>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-title">Sistem Kasir POS & Loyalty System</div>
+                        <div class="timeline-subtitle">
+                            Firebase, Web App 
+                            <a href="https://44441.oneapp.dev/" target="_blank">>> Live Preview</a>
+                        </div>
+                        <div class="timeline-desc">
+                            Aplikasi Point of Sales terintegrasi dengan sistem manajemen pelanggan (CRM) dan reward tingkat lanjut.
+                            <ul>
+                                <li><strong>Sistem Poin:</strong> Akumulasi otomatis berdasarkan nominal belanja. Mendukung integrasi scan barcode voucher untuk potongan harga otomatis.</li>
+                                <li><strong>Sistem Koin:</strong> Reward eksklusif berdasarkan kategori spesifik untuk ditukarkan dengan barang khusus yang dikonfigurasi admin.</li>
+                                <li><strong>Fitur Referral Multi-Tier:</strong> Skema *reward* asimetris yang mendistribusikan koin berbeda antara pihak yang mengundang (pengikat) dan yang diundang (diikat).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-title">Financial Monitoring Dashboard - ID STORE</div>
+                        <div class="timeline-subtitle">
+                            Google Apps Script, Web App
+                            <a href="https://script.google.com/macros/s/AKfycbzn9UjSqKq3SYpS_LMpr0qF2xGI1Us2x64iRnrbIBH-R3aEuVDKJyH9N3m0SZFHXYzs/exec" target="_blank">>> Live Preview</a>
+                        </div>
+                        <div class="timeline-desc">
+                            Aplikasi dasbor analitik berbasis web untuk memantau sirkulasi keuangan toko.
+                            <ul>
+                                <li>Manajemen dan monitoring pendapatan toko secara akurat dan *real-time*.</li>
+                                <li>Penyajian data laporan yang mudah dibaca untuk pengambilan keputusan manajemen.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TESTIMONIAL & FORM SECTION -->
+                <div class="section" id="reviews-section">
+                    <h2>// CLIENT_REVIEWS</h2>
+                    
+                    <!-- Dummy Reviews with Stars -->
+                    <div class="testimonial-box">
+                        <div class="star-rating">★★★★★</div>
+                        <div class="testimonial-text">"Sistem kasir yang jauh sangat membantu operasional toko. Fitur poin dan referral-nya berjalan mulus dan bikin pelanggan balik lagi!"</div>
+                        <div class="testimonial-author">- Owner, Toko Retail Lokal</div>
+                    </div>
+                    <div class="testimonial-box">
+                        <div class="star-rating">★★★★★</div>
+                        <div class="testimonial-text">"Dashboard keuangannya sangat rapi dan real-time. Memudahkan saya memantau sirkulasi keuangan ID STORE dari mana saja. Sangat direkomendasikan!"</div>
+                        <div class="testimonial-author">- Admin, ID STORE</div>
+                    </div>
+
+                    <!-- Container for live reviews fetched from Google Sheets -->
+                    <div id="dynamic-reviews-container"></div>
+
+                    <!-- Review / Contact Form -->
+                    <form id="review-form" class="cyber-form">
+                        <p>> TINGGALKAN ULASAN / HUBUNGI SAYA:</p>
+                        
+                        <div class="rating-select-container">
+                            <span>Rating Bintang:</span>
+                            <div class="star-picker">
+                                <input type="radio" id="star5" name="rating_val" value="5" required><label for="star5" title="5 bintang">★</label>
+                                <input type="radio" id="star4" name="rating_val" value="4"><label for="star4" title="4 bintang">★</label>
+                                <input type="radio" id="star3" name="rating_val" value="3"><label for="star3" title="3 bintang">★</label>
+                                <input type="radio" id="star2" name="rating_val" value="2"><label for="star2" title="2 bintang">★</label>
+                                <input type="radio" id="star1" name="rating_val" value="1"><label for="star1" title="1 bintang">★</label>
+                            </div>
+                        </div>
+
+                        <input type="text" id="form-name" class="cyber-input" placeholder="Nama Anda / Instansi" required>
+                        <input type="email" id="form-email" class="cyber-input" placeholder="Email Anda (Opsional)">
+                        <textarea id="form-message" class="cyber-input" rows="4" placeholder="Tulis ulasan, feedback, atau penawaran kerja di sini..." required></textarea>
+                        
+                        <button type="submit" class="cyber-button">KIRIM TRANSMISI >_</button>
+                    </form>
+                </div>
+
+            </section>
+        </div>
+    </div>
+
+    <script src="Javascript.js"></script>
+</body>
+</html>
