@@ -575,6 +575,87 @@ a:hover {
 .bottom-left { bottom: -2px; left: -2px; border-right: none; border-top: none; }
 .bottom-right { bottom: -2px; right: -2px; border-left: none; border-top: none; }
 
+
+/* Terminal Interactive Styles */
+.terminal-box {
+    background: #020408;
+    border: 1px solid var(--neon-cyan);
+    border-radius: 6px;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
+    font-family: 'Share Tech Mono', monospace;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.terminal-header {
+    background: #0d1424;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot.red { background: #ff5f56; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green { background: #27c93f; }
+
+.terminal-title {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-left: 5px;
+}
+
+.terminal-body {
+    padding: 15px;
+    max-height: 200px;
+    overflow-y: auto;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.terminal-body p {
+    margin: 0;
+}
+
+.cmd-highlight {
+    color: var(--neon-yellow);
+}
+
+.terminal-input-line {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 240, 255, 0.05);
+    padding: 10px 15px;
+    border-top: 1px solid var(--border-color);
+    gap: 10px;
+}
+
+.prompt {
+    color: var(--neon-cyan);
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+#terminal-input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.9rem;
+    width: 100%;
+    outline: none;
+}
+
 /* Print styling optimization */
 @media print {
     body { background: #fff !important; color: #000 !important; }
