@@ -1556,3 +1556,103 @@ header h1{text-shadow:0 0 7px rgba(0,234,255,.65),0 0 28px rgba(0,234,255,.2)}
 .cc-command-box,.cc-monitor-card{width:min(680px,100%);border:1px solid rgba(0,234,255,.35);border-radius:13px;background:linear-gradient(145deg,rgba(0,234,255,.08),rgba(155,50,255,.055)),rgba(3,7,16,.97);box-shadow:0 0 55px rgba(0,234,255,.12),inset 0 0 30px rgba(0,234,255,.025);padding:18px;color:#dceeff}
 .cc-command-head{display:flex;justify-content:space-between;align-items:center;color:#00eaff;font:12px "Share Tech Mono";letter-spacing:2px}.cc-command-head button,.cc-monitor-close{border:1px solid rgba(0,234,255,.25);background:rgba(0,234,255,.04);color:#00eaff;border-radius:6px;width:32px;height:32px;cursor:pointer}.cc-command-status,.cc-command-hints{font:9px "Share Tech Mono";color:#7087a9;margin:12px 0;letter-spacing:1px}.cc-command-box input{width:100%;box-sizing:border-box;border:1px solid rgba(0,234,255,.24);border-radius:7px;background:rgba(0,0,0,.28);padding:13px;color:#00eaff;outline:none;font:13px "Share Tech Mono"}.cc-command-box input:focus{border-color:#00eaff;box-shadow:0 0 15px rgba(0,234,255,.1)}#cc-command-results{margin-top:10px;max-height:280px;overflow:auto}.cc-cmd-item{width:100%;display:flex;justify-content:space-between;gap:15px;text-align:left;border:1px solid rgba(0,234,255,.09);background:rgba(0,234,255,.025);color:#9fb2cf;padding:10px;border-radius:6px;margin-bottom:5px;cursor:pointer}.cc-cmd-item:hover{border-color:rgba(0,234,255,.3);background:rgba(0,234,255,.06)}.cc-cmd-item b{color:#00eaff;font-family:"Share Tech Mono"}.cc-cmd-empty{padding:15px;color:#ff5577;font:10px "Share Tech Mono"}.cc-search-fab{position:fixed;right:18px;bottom:18px;z-index:9996;border:1px solid rgba(0,234,255,.3);border-radius:8px;background:rgba(3,8,17,.82);color:#00eaff;padding:9px 12px;cursor:pointer;font:10px "Share Tech Mono";box-shadow:0 0 18px rgba(0,234,255,.08);backdrop-filter:blur(8px)}.cc-search-fab span{color:#8ca2c3;margin-left:4px}.cc-command-focus{animation:ccFocus .9s ease}.cc-monitor-card{width:min(520px,100%);position:relative}.cc-monitor-close{position:absolute;right:14px;top:14px}.cc-monitor-title{color:#00eaff;font:12px "Share Tech Mono";letter-spacing:2px;margin-bottom:18px}.cc-monitor-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.cc-monitor-grid div{border:1px solid rgba(0,234,255,.12);padding:13px;border-radius:7px;background:rgba(0,234,255,.025);font:10px "Share Tech Mono";color:#91a6c4}.cc-monitor-grid i{display:inline-block;width:6px;height:6px;border-radius:50%;background:#00ff9d;box-shadow:0 0 9px #00ff9d;margin-right:7px}.cc-monitor-grid b{float:right;color:#00ff9d}.cc-monitor-clock{margin-top:14px;color:#7087a9;font:9px "Share Tech Mono";text-align:right}@keyframes ccFocus{0%{box-shadow:0 0 0 rgba(0,234,255,0)}35%{box-shadow:0 0 35px rgba(0,234,255,.25)}100%{box-shadow:0 0 0 rgba(0,234,255,0)}}
 @media(max-width:700px){.cc-search-fab{right:10px;bottom:10px}.cc-search-fab span{display:none}.cc-command-box,.cc-monitor-card{padding:14px}.cc-monitor-grid{grid-template-columns:1fr}.cc-cmd-item{display:block}.cc-cmd-item span{display:block;margin-top:4px}}
+
+/* PRINT FIX: reveal animated sections and preserve readable resume content */
+@media print {
+    .cc-reveal,
+    .cc-reveal.cc-visible,
+    .section,
+    .profile-content,
+    .contact-item,
+    .skill-item,
+    .timeline-item,
+    .project-card,
+    .testimonial-box {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+    }
+
+    body::after,
+    body::before {
+        display: none !important;
+        content: none !important;
+    }
+
+    .cc-project-modal {
+        display: none !important;
+    }
+}
+
+
+/* =========================================================
+   REVIEW FEED — SCROLLABLE VIEWPORT
+   Content/data/function preserved; display only.
+   ========================================================= */
+#review-list,
+.reviews-list,
+.review-list,
+.testimonials-list,
+#reviews-container {
+    max-height: 420px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0,234,255,.55) rgba(0,234,255,.05);
+    padding-right: 8px;
+}
+
+#review-list::-webkit-scrollbar,
+.reviews-list::-webkit-scrollbar,
+.review-list::-webkit-scrollbar,
+.testimonials-list::-webkit-scrollbar,
+#reviews-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+#review-list::-webkit-scrollbar-track,
+.reviews-list::-webkit-scrollbar-track,
+.review-list::-webkit-scrollbar-track,
+.testimonials-list::-webkit-scrollbar-track,
+#reviews-container::-webkit-scrollbar-track {
+    background: rgba(0,234,255,.035);
+    border-radius: 20px;
+}
+
+#review-list::-webkit-scrollbar-thumb,
+.reviews-list::-webkit-scrollbar-thumb,
+.review-list::-webkit-scrollbar-thumb,
+.testimonials-list::-webkit-scrollbar-thumb,
+#reviews-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg,#00eaff,#9b32ff);
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,234,255,.35);
+}
+
+/* Common wrappers used by the current review section */
+.testimonial-box {
+    position: relative;
+}
+
+.testimonial-box .review-list,
+.testimonial-box .reviews-list,
+.testimonial-box #review-list,
+.testimonial-box #reviews-container {
+    max-height: 420px;
+}
+
+@media (max-width:700px){
+    #review-list,
+    .reviews-list,
+    .review-list,
+    .testimonials-list,
+    #reviews-container,
+    .testimonial-box .review-list,
+    .testimonial-box .reviews-list,
+    .testimonial-box #review-list,
+    .testimonial-box #reviews-container {
+        max-height: 340px;
+        padding-right: 6px;
+    }
+}
