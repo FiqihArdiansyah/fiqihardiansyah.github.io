@@ -429,3 +429,41 @@ window.addEventListener('DOMContentLoaded', initCyberCityEffects);
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
 })();
+
+/* =========================================================
+   REVIEW SCROLL FALLBACK
+   Detects the populated review feed without changing its data.
+   ========================================================= */
+(function(){
+    function applyReviewScroll(){
+        const candidates = [
+            '#review-list',
+            '.reviews-list',
+            '.review-list',
+            '.testimonials-list',
+            '#reviews-container'
+        ];
+
+        let el = null;
+        for (const selector of candidates) {
+            const found = document.querySelector(selector);
+            if (found) { el = found; break; }
+        }
+
+        if (!el) return;
+
+        el.style.maxHeight = window.innerWidth <= 700 ? '340px' : '420px';
+        el.style.overflowY = 'auto';
+        el.style.overflowX = 'hidden';
+        el.style.overscrollBehavior = 'contain';
+        el.style.scrollbarWidth = 'thin';
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', applyReviewScroll, {once:true});
+    } else {
+        applyReviewScroll();
+    }
+
+    window.addEventListener('resize', applyReviewScroll, {passive:true});
+})();
